@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to book data</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<h3 class="bg-danger text-white text-center">Data List</h3>
+<table class="table table-hover">
+<tr class="bg-primary text-white">
+<th>bookid</th>
+<th>Book name</th>
+<th>Author</th>
+<th>price</th>
+</tr>
+<tr th:each="ob:${bookset}">
+<td th:text="${ob.bookid}"></td>
+<td th:text="${ob.bookname}"></td>
+<td th:text="${ob.bookAuth}"></td>
+<td th:text="${ob.bookcoast}"></td>
+<td>
+<button class="btn btn-danger">Delete</button>
+<button class="btn btn-info">update</button>
+</td>
+</tr>
+
+
+
+</table>
+</div>
+
+</body>
+</html>
