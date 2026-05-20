@@ -18,7 +18,7 @@ public class ProductService {
         return repo.save(product);
     }
 
-    public List<Product> getAll() {
+    public  List<Product> getAll() {
         return repo.findAll();
     }
 

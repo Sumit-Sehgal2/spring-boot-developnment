@@ -24,6 +24,22 @@ public class Aop1 {
 		System.out.println("here we are calling the pointcut");
 	}
 	
+	@Around("within(com.react.sumit.controller..*)")
+	
+	public Object teste1(ProceedingJoinPoint point) throws Throwable
+	{
+		System.out.println("here we are entering in the controller");
+		
+		Object result=point.proceed();
+		System.out.println("termination done");
+		
+		return result;
+	}
+	
+	
+	
+	
+	
 	@Around("servicemethod()")
 	  public Object  beforeAndAfters(ProceedingJoinPoint point) throws Throwable
     {

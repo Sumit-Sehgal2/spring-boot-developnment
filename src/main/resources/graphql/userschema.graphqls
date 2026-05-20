@@ -1,0 +1,24 @@
+type users {
+  uid: ID
+  username: String
+  contact: String
+  orders: [orderss]
+}
+
+type orderss {
+  oid: ID
+  orderType: String
+  orderstatus: String
+}
+
+type Query {
+  getuserinfo: [users]
+  getById(uid:ID!):users
+  getUserData: [users]
+}
+type Mutation{
+  deleteTheUserById(uid :ID!):users
+  savedata(username:String!,contact:String!):users
+
+}
+

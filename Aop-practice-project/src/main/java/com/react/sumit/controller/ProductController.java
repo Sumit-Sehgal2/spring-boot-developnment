@@ -34,12 +34,15 @@ public class ProductController {
     @PostMapping("/list")
     public ResponseEntity<List<Product>>saveall(@RequestBody List<Product>product)
     {
+    	
+    	List<Product>geta=service.getAll();
+    	System.out.println(geta);
    List<Product>products= 	productrepo.saveAll(product);
     	return new ResponseEntity<List<Product>>(products,HttpStatus.ACCEPTED);
     }
 
     @GetMapping
-    public List<Product> getAll() {
+    private List<Product> getAll() {
         return service.getAll();
     }
 
